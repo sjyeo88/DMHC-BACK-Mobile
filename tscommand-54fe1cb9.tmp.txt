@@ -1,0 +1,1 @@
+src\auth-strategy.ts src\configure\config.ts src\configure\password\passwords.ts src\interfaces\userdata.interface.ts src\router\auth.ts src\router\getdata.ts src\router\img.ts src\router\index.ts src\server.ts src\service\html-service.ts src\service\mail-service.ts src\.baseDir.ts --removeComments --target ES6 --module commonjs --outDir ./dist
