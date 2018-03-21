@@ -13,11 +13,12 @@ export class ServerConfig {
   public jwt_password:string = security.jwt_password;
   public assetPath:string = 'assets'
   public fileStoragePath:string = './assets'
-  public domain:string = 'https://dailydmhc.com'
-  public frontDomain:string = 'https://dailydmhc:4200'
-  public perpose:string = '/api' //When Upload server make to ''
+  public domain:string = 'https://dailymhc.com'
+  public frontDomain:string = 'https://dailymhc:4200'
+  public perpose:string = '/mobile/api' //When Upload server make to ''
   public fullDomain = this.domain + this.perpose;
   public adminMailPassword:string = security.adminMailPassword;
+  public fcmApiKey:string = security.fcmApiKey;
 
   dbSetting:setInputInterface = {
     host:  security.sqlHost,

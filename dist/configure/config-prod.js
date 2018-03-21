@@ -6,11 +6,12 @@ class ServerConfig {
         this.jwt_password = passwords_1.security.jwt_password;
         this.assetPath = 'assets';
         this.fileStoragePath = './assets';
-        this.domain = 'https://dailydmhc.com';
-        this.frontDomain = 'https://dailydmhc:4200';
-        this.perpose = '/api';
+        this.domain = 'https://dailymhc.com';
+        this.frontDomain = 'https://dailymhc:4200';
+        this.perpose = '/mobile/api';
         this.fullDomain = this.domain + this.perpose;
         this.adminMailPassword = passwords_1.security.adminMailPassword;
+        this.fcmApiKey = passwords_1.security.fcmApiKey;
         this.dbSetting = {
             host: passwords_1.security.sqlHost,
             user: 'root',
