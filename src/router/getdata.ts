@@ -641,7 +641,7 @@ module.exports = function(app):express.Router{
   router.get(
     "/assign/now/:idPATIENT_USER",
     (req:express.Request, res:express.Response) => {
-      app.SubMan.genAssignNowAll(req.params.idPATIENT_USER);
+      app.SubMan.genAssignNowAll(parseInt(req.params.idPATIENT_USER));
     }
   );
 
