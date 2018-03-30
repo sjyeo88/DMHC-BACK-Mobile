@@ -546,7 +546,7 @@ module.exports = function (app) {
         });
     });
     router.get("/assign/now/:idPATIENT_USER", (req, res) => {
-        this.app.SubMan.genAssignNowAll(req.params.idPATIENT_USER);
+        app.SubMan.genAssignNowAll(req.params.idPATIENT_USER);
     });
     function ensureAuthenticated(req, res, next) {
         if (req.headers.cred === 'null') {
