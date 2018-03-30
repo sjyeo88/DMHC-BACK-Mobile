@@ -8,7 +8,7 @@ class ServerConfig {
         this.fileStoragePath = './assets';
         this.domain = 'http://localhost:3000';
         this.frontDomain = 'https://dailymhc.com';
-        this.perpose = '/api';
+        this.perpose = '/mobile/api';
         this.fullDomain = this.domain + this.perpose;
         this.adminMailPassword = passwords_1.security.adminMailPassword;
         this.fcmApiKey = passwords_1.security.fcmApiKey;

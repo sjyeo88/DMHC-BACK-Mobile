@@ -15,7 +15,7 @@ export class ServerConfig {
   public fileStoragePath:string = './assets'
   public domain:string = 'http://localhost:3000'
   public frontDomain:string = 'https://dailymhc.com'
-  public perpose:string = '/api' //When Upload server make to ''
+  public perpose:string = '/mobile/api' //When Upload server make to ''
   public fullDomain = this.domain + this.perpose;
   public adminMailPassword:string = security.adminMailPassword;
   public fcmApiKey:string = security.fcmApiKey;

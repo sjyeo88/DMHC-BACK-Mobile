@@ -58,9 +58,10 @@ class SubjectManger {
             .catch(err => { console.log(err); });
     }
     genAssignNowAll(idPATIENT_USER) {
+        console.log('works?');
         Promise.all([this.getSubjectConfigurePerson(idPATIENT_USER), this.getSubjects()])
             .then(datas => { return this.subjectFilter(datas); })
-            .then(configs => { return this.genSubjects(configs, true); })
+            .then(configs => { ; return this.genSubjects(configs, true); })
             .then(sbjts => { this.insertSubjects(sbjts); return sbjts; })
             .catch(err => { console.log(err); });
     }

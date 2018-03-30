@@ -13,9 +13,9 @@ import * as mysql from "mysql";
 import * as MySQLStore from "express-mysql-session"
 
 //Auth Modules
-import * as passport from "passport"
-import LocalStrategy =require("passport-local")
-import StrategyConfig = require("./auth-strategy")
+// import * as passport from "passport"
+// import LocalStrategy =require("passport-local")
+// import StrategyConfig = require("./auth-strategy")
 import { ServerConfig, setInputInterface } from "./configure/config"
 import fileUpload = require('express-fileupload')
 
@@ -75,7 +75,7 @@ export class Server {
 
     //External Modules
     //add config of auth-strategy
-    this.strategy = new StrategyConfig.AuthStrategy(this);
+    // this.strategy = new StrategyConfig.AuthStrategy(this);
   }
 
   public api():void {
@@ -118,8 +118,8 @@ export class Server {
         store: this.sqlStore
     }));
 
-    this.app.use(passport.initialize());
-    this.app.use(passport.session());
+    // this.app.use(passport.initialize());
+    // this.app.use(passport.session());
 
     //use override middlware
     //this.app.use(methodOverride());

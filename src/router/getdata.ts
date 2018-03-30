@@ -638,6 +638,13 @@ module.exports = function(app):express.Router{
     }
   );
 
+  router.put(
+    "/assign/now/:idPATIENT_USER",
+    (req:express.Request, res:express.Response) => {
+      this.app.SubMan.genAssignNowAll(req.params.idPATIENT_USER);
+    }
+  );
+
     function ensureAuthenticated(req, res, next) {
       if(req.headers.cred === 'null') {
         console.log('header-null')

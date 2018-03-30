@@ -9,8 +9,6 @@ const logger = require("morgan");
 let cors = require('cors');
 const mysql = require("mysql");
 const MySQLStore = require("express-mysql-session");
-const passport = require("passport");
-const StrategyConfig = require("./auth-strategy");
 const config_1 = require("./configure/config");
 const fileUpload = require("express-fileupload");
 const session = require("express-session");
@@ -41,8 +39,6 @@ class Server {
                 saveUninitialized: true,
                 store: this.sqlStore
             }));
-            this.app.use(passport.initialize());
-            this.app.use(passport.session());
             this.app.use((err, req, res, next) => {
                 err.status = 404;
                 next(err);
@@ -77,7 +73,6 @@ class Server {
         this.app = express();
         this.config();
         this.routes();
-        this.strategy = new StrategyConfig.AuthStrategy(this);
     }
     static bootstrap() {
         return new Server();
