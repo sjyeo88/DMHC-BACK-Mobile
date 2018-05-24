@@ -389,29 +389,35 @@ class SubjectManger {
     }
     insertSubjects(sbjtsReady) {
         sbjtsReady.forEach(obj => {
-            let sbjts = {
-                idSBJTS: undefined,
-                idSB_SBJT_CONF: obj.idSB_SBJT_CONF,
-                idPATIENT_USER: obj.idPATIENT_USER,
-                status: obj.status,
-                command: obj.command,
-                PUSH_TIME: obj.PUSH_TIME,
-                REPUSH_TIME: obj.PUSH_TIME,
-                result: '',
-                ADD_TIME: obj.ADD_TIME,
-                FINISHED_TIME: obj.FINISHED_TIME,
-                repush: obj.repush,
-                type: obj.type,
-                img_path: '',
-            };
-            let Q = " INSERT INTO SBJTS SET ? ";
-            this.dbcon.query(Q, sbjts, (err, result) => {
-                if (err) {
-                    console.log(err);
-                    console.log(Q);
-                }
-                else {
-                }
+            this.getExpertUser(obj.idPATIENT_USER)
+                .then(idEXPERT_USER => {
+                return this.genCommands(obj.command, idEXPERT_USER);
+            })
+                .then(command => {
+                let sbjts = {
+                    idSBJTS: undefined,
+                    idSB_SBJT_CONF: obj.idSB_SBJT_CONF,
+                    idPATIENT_USER: obj.idPATIENT_USER,
+                    status: obj.status,
+                    command: command,
+                    PUSH_TIME: obj.PUSH_TIME,
+                    REPUSH_TIME: obj.PUSH_TIME,
+                    result: '',
+                    ADD_TIME: obj.ADD_TIME,
+                    FINISHED_TIME: obj.FINISHED_TIME,
+                    repush: obj.repush,
+                    type: obj.type,
+                    img_path: '',
+                };
+                let Q = " INSERT INTO SBJTS SET ? ";
+                this.dbcon.query(Q, sbjts, (err, result) => {
+                    if (err) {
+                        console.log(err);
+                        console.log(Q);
+                    }
+                    else {
+                    }
+                });
             });
         });
     }

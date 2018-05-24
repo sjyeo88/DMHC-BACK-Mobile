@@ -1,0 +1,8 @@
+node_modules/
+platforms/
+plugins/
+.DS_Store
+src/*/password/
+dist/*/password/
+./tscommand*
+assets/userfiles/
