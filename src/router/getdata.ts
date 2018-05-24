@@ -360,7 +360,7 @@ module.exports = function(app):express.Router{
   router.get(
     "/assign/lecture/pdf/:title", ensureAuthenticated,
     (req:express.Request, res:express.Response) => {
-      let path = config.fileStoragePath + "/userfiles/"+
+      let path = config.expertFileStoragePath + "/userfiles/"+
       req.user.idEXPERT_USER + '/lectures/' +
       // '1' + '/lectures/' +
       req.params.title + "/";

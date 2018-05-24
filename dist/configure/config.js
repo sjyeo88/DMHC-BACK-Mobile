@@ -6,6 +6,7 @@ class ServerConfig {
         this.jwt_password = passwords_1.security.jwt_password;
         this.assetPath = 'assets';
         this.fileStoragePath = './assets';
+        this.expertFileStoragePath = './assets-expert';
         this.domain = 'http://localhost:3000';
         this.frontDomain = 'https://dailymhc.com';
         this.perpose = '/mobile/api';

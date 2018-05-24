@@ -13,6 +13,7 @@ export class ServerConfig {
   public jwt_password:string = security.jwt_password;
   public assetPath:string = 'assets'
   public fileStoragePath:string = './assets'
+  public expertFileStoragePath:string = './assets-expert'
   public domain:string = 'http://localhost:3000'
   public frontDomain:string = 'https://dailymhc.com'
   public perpose:string = '/mobile/api' //When Upload server make to ''

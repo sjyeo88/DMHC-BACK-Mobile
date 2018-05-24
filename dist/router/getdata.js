@@ -308,7 +308,7 @@ module.exports = function (app) {
         });
     });
     router.get("/assign/lecture/pdf/:title", ensureAuthenticated, (req, res) => {
-        let path = config.fileStoragePath + "/userfiles/" +
+        let path = config.expertFileStoragePath + "/userfiles/" +
             req.user.idEXPERT_USER + '/lectures/' +
             req.params.title + "/";
         let fileName = req.params.title + '.pdf';
