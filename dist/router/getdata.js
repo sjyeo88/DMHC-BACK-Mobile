@@ -423,7 +423,7 @@ module.exports = function (app) {
     router.get("/user", ensureAuthenticated, (req, res) => {
         console.log('user', req.user);
         let Q = ' SELECT PATIENT_USER.email, ';
-        Q += " password_q, ";
+        Q += " PATIENT_USER.password_q, ";
         Q += " PATIENT_USER.name, ";
         Q += " PATIENT_USER.gender, ";
         Q += " CONVERT_TZ(PATIENT_USER.birth, 'UTC', 'Asia/Seoul') as birth, ";

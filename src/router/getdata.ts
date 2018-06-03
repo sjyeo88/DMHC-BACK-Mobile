@@ -498,7 +498,7 @@ module.exports = function(app):express.Router{
     (req:express.Request, res:express.Response) => {
       console.log('user', req.user)
       let Q:string = ' SELECT PATIENT_USER.email, '
-      Q += " password_q, "
+      Q += " PATIENT_USER.password_q, "
       Q += " PATIENT_USER.name, "
       Q += " PATIENT_USER.gender, "
       Q += " CONVERT_TZ(PATIENT_USER.birth, 'UTC', 'Asia/Seoul') as birth, "
