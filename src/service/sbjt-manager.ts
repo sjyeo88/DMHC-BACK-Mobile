@@ -486,7 +486,7 @@ export class SubjectManger {
             }
             let pushTime = this.getPushTime(timeOpt)
             if(now) {
-              pushTime = new Date(moment.getTime()-9*3600*1000);
+              pushTime = new Date(moment.getTime());
             }
 
             if(pushTime.getTime() >= moment.getTime()-9*3600*1000) {
